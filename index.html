@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarCheckUP - Consulte Tabela Fipe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <img src="/07933c71-b909-41f3-b3d2-6c3ad1c9c167 (2).png" alt="Carro" class="car-image">
+    <h1 class="title">CarCheckUP</h1>
+    <p class="subtitle">Consulte Tabela Fipe</p>
+  </div>
+
+  <div class="container">
+    <form class="form" id="apiForm">
+      <label class="label" for="ano">Ano:</label>
+      <input class="input" type="text" id="ano" name="ano" placeholder="Insira o ano" required>
+
+      <label class="label" for="modelo">Modelo:</label>
+      <input class="input" type="text" id="modelo" name="modelo" placeholder="Insira o modelo" required>
+
+      <label class="label" for="vehiclesType">Tipo de Veículo:</label>
+      <select class="select" id="vehiclesType" name="vehiclesType">
+        <option value="cars">Carros</option>
+        <option value="motorcycles">Motos</option>
+        <option value="trucks">Caminhões</option>
+      </select>
+
+      <button class="button" type="button" onclick="makeRequest()">Fazer Requisição</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <div class="pagination" id="pagination"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
