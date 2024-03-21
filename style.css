@@ -92,9 +92,9 @@ body {
   }
 
   .car-image {
-    width: 100px; /* Defina o tamanho desejado para a imagem */
-    height: auto; /* Mantenha a proporção da imagem */
-    margin-right: 10px; /* Espaçamento à direita para separar a imagem do texto */
+    width: 100px; 
+    height: auto; 
+    margin-right: 10px; 
   }
   
   

@@ -4,7 +4,7 @@ let totalPages = 1;
 function makeRequest() {
   const ano = document.getElementById('ano').value;
   const modelo = document.getElementById('modelo').value;
-  const vehiclesType = document.getElementById('vehiclesType').value; // Obter o valor selecionado do select
+  const vehiclesType = document.getElementById('vehiclesType').value; 
   const url = `http://localhost:3000/api/Fipe/${ano}/${modelo}?vehiclesType=${vehiclesType}&page=${currentPage}`;
 
   fetch(url)
@@ -15,7 +15,7 @@ function makeRequest() {
       return response.json();
     })
     .then(data => {
-      totalPages = Math.ceil(data.length / 20); // Assumindo que cada página terá 20 resultados
+      totalPages = Math.ceil(data.length / 5); 
       displayResult(data);
       displayPagination();
     })
@@ -28,8 +28,8 @@ function displayResult(data) {
   const resultDiv = document.getElementById('result');
   resultDiv.innerHTML = `<h2></h2>`;
 
-  const startIndex = (currentPage - 1) * 20;
-  const endIndex = startIndex + 20;
+  const startIndex = (currentPage - 1) * 5;
+  const endIndex = startIndex + 5;
   const carsToShow = data.slice(startIndex, endIndex);
 
   if (Array.isArray(carsToShow) && carsToShow.length > 0) {
